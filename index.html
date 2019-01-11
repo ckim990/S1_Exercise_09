@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
     <!--
       New Perspectives on HTML5 and CSS3, 7th Edition
       Tutorial 7
@@ -15,44 +15,44 @@
 
    -->
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Red Ball Survey</title>
-    <link href="rb_reset.css" rel="stylesheet" />
-    <link href="rb_styles.css" rel="stylesheet" />
-    <link rel="stylesheet" href="rb_forms.css" />
-    <script src="rb_formsubmit.js"></script>
-</head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Red Ball Survey</title>
+        <link href="rb_reset.css" rel="stylesheet" />
+        <link href="rb_styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="rb_forms.css" />
+        <script src="rb_formsubmit.js"></script>
+    </head>
 
-<body>
-    <header>
-        <img src="rb_logo.png" alt="Red Ball Pizza" id="logoimg" />
-        <nav> <a id="navicon" href="#"><img src="rb_navicon.png" alt="" /></a>
-            <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">menu</a></li>
-                <li><a href="#">directions</a></li>
-                <li><a href="#">coupons</a></li>
-                <li><a href="#">orders</a></li>
-                <li><a href="#">catering</a></li>
-                <li><a href="#">reviews</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section>
-        <h1>Customer Survey</h1>
-        <p>Thank you for taking our customer survey. Your response
+    <body>
+        <header>
+            <img src="rb_logo.png" alt="Red Ball Pizza" id="logoimg" />
+            <nav> <a id="navicon" href="#"><img src="rb_navicon.png" alt="" /></a>
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">menu</a></li>
+                    <li><a href="#">directions</a></li>
+                    <li><a href="#">coupons</a></li>
+                    <li><a href="#">orders</a></li>
+                    <li><a href="#">catering</a></li>
+                    <li><a href="#">reviews</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <h1>Customer Survey</h1>
+            <p>Thank you for taking our customer survey. Your response
             helps Red Ball Pizza maintain the tradition that has made
             us the top-rated pizzeria in the metro area.
             All participants are automatically entered into a monthly
             drawing to receive a <em>Red Ball Express PizzaFest</em> containing
             two large pizzas, a 2-liter soda, and a side
             order of chicken wings. Check your e-mail inbox for
-            contest results. </p>
-        <p>Surveys are private and confidential. Red Ball
+            contest results.    </p>
+            <p> Surveys are private and confidential. Red Ball
             Pizza will not share your contact information with third
-            parties, <em>ever</em>. </p>
-        <p>Required values are marked by an asterisk (*)</p>
+            parties, <em>ever</em>.     </p>
+            <p>Required values are marked by an asterisk (*)</p>
 <!-- survey 1 -->
         <form action="http://www.example.com/redball/survey" id="survey" method="POST" enctype="">
             <fieldset id="custInfo">
@@ -102,6 +102,27 @@
                             <option value="other">Other</option>
                         </select>
                     </div>
+
+                    <div class="formRow">
+                        <label for="dish">What's your favorite dish?</label>
+                        <input type="text" name="favDish" id="dish" list="dishType" />
+                        <datalist id="dishtype">
+                            <option value="Antipasto Pizza" />
+                            <option value="Big Kahuna Pizza"/>
+                            <option value="BBQ Chicken Pizza"/>
+                            <option value="Mediterranean Herb Pizza"/>
+                            <option value="Pasta Rolls"/>
+                            <option value="Pesto Artichoke Pizza"/>
+                        </datalist>
+                    </div>
+
+                    <div class="formRow">
+                        <label for="dineSpin"></label>How many times do you dine out per month?</label>
+                        <input type="number" name="dineOut" id="dineSpin" value="1" step="1" min="0" max="20">
+                    </div>
+
+                    <input type="checkbox" name="mailMe" id="mailCB" value="yes" />
+                    <label for="mailCB">Add me to your mailing list for great coupons and specials!!!</label>
             </fieldset>
             
             <!-- survey 2 -->
@@ -145,7 +166,22 @@
                                 <input type="radio" name="foodHot" id="hNo" value="No">
                             </fieldset>
                         </div>
+                   
+                        <div class="formRow">
+                            <label for="rangeBox">Rate the overall service.<br/>
+                            (0=poor; 10=great)</label>
+                            0
+                            <input type="range" name="serviceRate" id="rangeBox" value="5" step="1" min="0" max="10">
+                            10
+                        </div>
+
+                        <label for="commBox">Tell us more about your experience.</label>
+                        <textarea name="custExp" id="commBox"></textarea>
             </fieldset>
+            <div id="buttons">
+                <input type="submit" value="Submit My Survey">
+                <input type="reset" value="Cancel">
+            </div>
         </form>
     </section>
     <footer>
@@ -169,5 +205,5 @@
             (386) 555 - 7499
         </address>
     </footer>
-</body>
+    </body>
 </html>
